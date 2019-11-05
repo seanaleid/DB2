@@ -24,3 +24,23 @@
     - run `npx gitignore node`
     - run `npm i express helmet knex sqlite3`
     - run `npm i nodemon -D`
+
+Migrations are a way to record changes to the database schema.
+
+**It's like got, for the database straucture**
+
+**EVERY CHANGE TO THE DATABASE SCHEMA (STRUCTURE) MUST BE DONE WITH A NEW MIGRATION**
+
+## MIGRATIONS
+
+-1 Initialize Knex for our project: `knex init`
+
+-2 Optionally install knex globally on your system: `npm i -g knex` / `yarn global add knex`
+
+-3 Create a migration: `npx knex migrate: make <name>`
+    -3.1 Use the migrations to declare the changes we plan to make to the schema.
+    -3.2 copy from the documentation and RETURN!!!!!!! In the migration file exports.up
+- Run a migration: `npx knex migrate :up`
+- Undo the last migration: `npx migrate: down`
+- Update database to latest changes/migrations: `npm knex migrate: latest` <== multiple new migrations
+- Undo multiple migrations that ran together: `npx knex migrate: rollback`
